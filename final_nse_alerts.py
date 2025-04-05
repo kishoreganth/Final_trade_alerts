@@ -236,7 +236,7 @@ def get_CA_equities():
         print("SESSION need to refresh it")
         session = get_cookies()
     # print(session)
-    
+    print("STARTING")
     sheet_id =gsheet_chats
     gsheet_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv"
     df = pd.read_csv(gsheet_url)
@@ -356,7 +356,8 @@ def run_scheduler():
 
 if __name__ == "__main__":
     # Set the webhook
-    set_webhook()
+    # set_webhook()
+    print("Starting")
     scheduler_thread = threading.Thread(target=run_scheduler)
     scheduler_thread.daemon = True
     scheduler_thread.start()
